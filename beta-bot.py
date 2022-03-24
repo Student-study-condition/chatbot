@@ -169,7 +169,7 @@ class checkStudy:
                 prefered_stat = self.iot_database.get_stat(self.database.get_user(str(update.message.chat_id))['registerDevices'][0])
                 new_stat = self.iot_database.get_stat(text)  
 
-                res = stat.compareData(prefered_stat, new_stat)
+                res = stat.compareData(prefered_stat, new_stat).result()
 
                 if (res == 'ok'):
                     result = "This location is suitable for study"
